@@ -90,7 +90,7 @@ select* from managers
 select* from matches
 select* from teams
 
-SELECT match_id, CAST(date_time AS DATETIME) AS dateTime from matches 
+SELECT match_id, season, CAST(date_time AS DATETIME) AS dateTime from matches 
 
 select * from INFORMATION_SCHEMA.TABLE_CONSTRAINTS
 
@@ -124,43 +124,63 @@ order by country_name
 --3. All the teams that have won more than 3 matches in their home stadium.
 --(Assume a team wins only if they scored more goals then other team)
 
-select team_id, team_name, count(*) as matches_won_in_HomeStd from teams inner join 
-matches on matches.stadium_id=teams.home_stadium_id where home_team_score>away_team_score
+select team_id, team_name, count(home_team_id) as NumberofWins 
+from matches 
+inner join teams on matches.home_team_id = teams.team_id --join on home teams id not on home team stadiums
+where home_team_score > away_team_score
 group by team_id, team_name
 having count(*) >3
 
-select count(home_team_id) as matches_won , team_id 
-from matches 
-inner join teams on teams.home_stadium_id = matches. stadium_id 
-where home_team_id in (select home_team_id from matches where 
---matches.home_team_id =teams.team_id  and 
-home_team_score > away_team_score)
-group by team_id
+--4. All the teams with foreign managers.
+
+select teams.team_id, teams.team_name, teams.country, managers.nationality as ManagerNationality 
+from teams
+inner join managers on managers.team_id = teams.team_id
+where teams.country!=managers.nationality
 
 
-select * from matches where home_team_id=15 
-and home_team_score > away_team_score
+--5. All the matches that were played in stadiums with seating capacity greater
+--than 60,000.
 
-select count(home_team_id) as matches_won, match_id
+select match_id, season, CAST(date_time AS DATETIME) AS dateTime, stadium_id, capacity 
 from matches
-where home_team_score > away_team_score
-group by match_id
+inner join stadiums on stadiums.sid=matches.stadium_id
+where stadiums.capacity>60000
 
-select team_id, team_name, country, home_stadium_id from teams inner join matches on matches.stadium_id = teams.home_stadium_id
-where teams.team_id in 
-(select home_team_id from matches where home_team_score > away_team_score )
+--6. All Goals made without an assist in 2020 by players having height greater
+--than 180 cm.
 
-select count(home_team_id) as matches_won, team_id
+select goal_id, goals.match_id, pid, assist, goal_desc, duration, height as playerHeight from goals 
+inner join matches on matches.match_id=goals.match_id 
+inner join players on players.player_id = goals.pid
+where season = '2020-2021'
+and assist is null
+and players.height >180
+
+--7. All Russian teams with win percentage less than 50% in home matches.
+ 
+--9. The season with the greatest number of left-foot goals.
+
+select matches.season, goals.goal_desc, count(goals.goal_id) as NumberofGoals
 from matches 
-inner join teams on matches.stadium_id = teams.home_stadium_id
-where home_team_score > away_team_score
-group by team_id
-having count(*) >3
+inner join goals on matches.match_id=goals.match_id
+where goals.goal_desc like '%left-footed%'
+group by season, GOAL_DESC
+having count(goals.goal_id)=
+(select max(NumberofGoals)
+ from (
+ select matches.season, goals.goal_desc, count(goals.goal_id) as NumberofGoals
+ from matches 
+ inner join goals on matches.match_id=goals.match_id
+ where goals.goal_desc like '%left-footed%'
+ group by season, GOAL_DESC
+      ) as t
+)
 
-SELECT matches.home_team_id, COUNT(matches.home_team_id) AS NumberOfWins FROM matches
-inner JOIN teams ON teams.home_stadium_id = matches.stadium_id
-where home_team_score > away_team_score
+--select matches.season, goals.goal_desc, count(goals.goal_id) as NumberofGoals
+--from matches 
+--inner join goals on matches.match_id=goals.match_id
+--where goals.goal_desc like '%left-footed%'
+--group by season, GOAL_DESC
+--order by NumberofGoals desc
 
-GROUP BY home_team_id;
-
-select* from teams
