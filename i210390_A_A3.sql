@@ -158,7 +158,30 @@ and assist is null
 and players.height >180
 
 --7. All Russian teams with win percentage less than 50% in home matches.
- 
+
+select team_id, team_name, country,
+count(*) as matchesPlayed,
+count(case when home_team_score > away_team_score then 1 else null end) as NumberofWins,
+cast(count(case when home_team_score > away_team_score then 1 else null end) as float) / count(*) *100  as winPercentage
+from matches t1
+inner join teams on home_team_id = team_id --join on home teams id not on home team stadiums
+where country='Russia'  
+group by team_id, team_name, country
+having cast(count(case when home_team_score > away_team_score then 1 else null end) as float) / count(*) *100 <50
+
+--8. All Stadiums that have hosted more than 6 matches with host team having
+--a win percentage less than 50%.
+
+select sid, name, city,
+count(*) as matchesHosted,
+count(case when home_team_score > away_team_score then 1 else null end) as HostWins,
+cast(count(case when home_team_score > away_team_score then 1 else null end) as float) / count(*) *100  as winPercentage
+from matches t1
+inner join stadiums on sid = stadium_id --join on home teams id not on home team stadiums  
+group by sid, name, city
+having cast(count(case when home_team_score > away_team_score then 1 else null end) as float) / count(*) *100 <50
+and count(*) > 6
+
 --9. The season with the greatest number of left-foot goals.
 
 select matches.season, goals.goal_desc, count(goals.goal_id) as NumberofGoals
@@ -184,3 +207,39 @@ having count(goals.goal_id)=
 --group by season, GOAL_DESC
 --order by NumberofGoals desc
 
+--10. The country with maximum number of players with at least one goal.
+
+select top 1 nationality as country,
+count(case when pid is not null then 1 else null end) as goalsMade,
+count (distinct pid) as NumberofPlayers
+from goals
+inner join players on goals.PID=players.player_id
+group by nationality
+order by NumberofPlayers desc
+
+--11.All the stadiums with greater number of left-footed shots than right-footed
+--shots.
+select * from goals
+select distinct sid, name, city, capacity
+from stadiums
+inner join matches on matches.stadium_id = stadiums.sid
+where matches.match_id in  
+(select match_id
+--count(case when goal_desc like '%left-footed%' then 1 else null end) as leftFootedGoals,
+--count(case when goal_desc like '%right-footed%' then 1 else null end) as rightFootedGoals
+from goals 
+group by match_id
+having count(case when goal_desc like '%left-footed%' then 1 else null end)  >
+count(case when goal_desc like '%right-footed%' then 1 else null end) 
+)
+
+
+
+select* from matches
+
+
+select match_id,
+count(case when goal_desc like '%left-footed%' then 1 else null end) as leftFootedGoals,
+count(case when goal_desc like '%right-footed%' then 1 else null end) as rightFootedGoals
+from goals 
+group by match_id
