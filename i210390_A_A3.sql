@@ -219,27 +219,50 @@ order by NumberofPlayers desc
 
 --11.All the stadiums with greater number of left-footed shots than right-footed
 --shots.
-select * from goals
+
 select distinct sid, name, city, capacity
 from stadiums
 inner join matches on matches.stadium_id = stadiums.sid
 where matches.match_id in  
-(select match_id
---count(case when goal_desc like '%left-footed%' then 1 else null end) as leftFootedGoals,
---count(case when goal_desc like '%right-footed%' then 1 else null end) as rightFootedGoals
-from goals 
-group by match_id
-having count(case when goal_desc like '%left-footed%' then 1 else null end)  >
-count(case when goal_desc like '%right-footed%' then 1 else null end) 
-)
+ (select match_id
+  from goals 
+  group by match_id
+  having count(case when goal_desc like '%left-footed%' then 1 else null end)  >
+  count(case when goal_desc like '%right-footed%' then 1 else null end) 
+ )
 
-
-
-select* from matches
-
-
-select match_id,
+---same query with number of goals displayed 
+select sid, name, city, capacity,
+goals.match_id,
 count(case when goal_desc like '%left-footed%' then 1 else null end) as leftFootedGoals,
 count(case when goal_desc like '%right-footed%' then 1 else null end) as rightFootedGoals
-from goals 
-group by match_id
+from stadiums
+inner join matches on matches.stadium_id = stadiums.sid
+inner join goals on goals.match_id=matches.match_id
+group by sid,name, city, capacity, goals.match_id
+having count(case when goal_desc like '%left-footed%' then 1 else null end)  >
+count(case when goal_desc like '%right-footed%' then 1 else null end) 
+
+--12.All matches that were played in country with maximum cumulative stadium
+--seating capacity order by recent first.
+
+select* from stadiums
+select* from matches
+select matches.match_id, CAST(matches.date_time AS datetime) AS date_Time, 
+matches.stadium_id, stadiums.name, stadiums.city, cities.country_name,
+sum(stadiums.capacity) as cumCapacity
+from matches
+inner join stadiums on 
+stadiums.sid=matches.stadium_id
+inner join cities on
+cities.city_name=stadiums.city
+group by matches.match_id, matches.date_time, matches.stadium_id, stadiums.name, stadiums.city, cities.country_name
+order by date_Time
+
+having cities.city_name=stadiums.city
+
+select matchesCSV.date_time from matchesCSV
+select matches.date_time from matches
+
+alter table matches 
+alter column date_time datetime2
