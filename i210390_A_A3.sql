@@ -55,7 +55,7 @@ drop table matches
 CREATE TABLE matches (
     mid VARCHAR(10) PRIMARY KEY not null,
     season VARCHAR(10),
-	date_time TIMESTAMP,
+	date_time datetime2,
 	home_team VARCHAR(10),
     away_team VARCHAR(10),
     stadium VARCHAR(10),
@@ -246,8 +246,6 @@ count(case when goal_desc like '%right-footed%' then 1 else null end)
 --12.All matches that were played in country with maximum cumulative stadium
 --seating capacity order by recent first.
 
-select* from stadiums
-select* from matches
 select matches.match_id, CAST(matches.date_time AS datetime) AS date_Time, 
 matches.stadium_id, stadiums.name, stadiums.city, cities.country_name,
 sum(stadiums.capacity) as cumCapacity
@@ -257,12 +255,73 @@ stadiums.sid=matches.stadium_id
 inner join cities on
 cities.city_name=stadiums.city
 group by matches.match_id, matches.date_time, matches.stadium_id, stadiums.name, stadiums.city, cities.country_name
-order by date_Time
+order by date_Time desc
 
-having cities.city_name=stadiums.city
+--13.The player duo with the greatest number of goal-assist combination (i.e.
+--pair of players that have assisted each other in more goals than any other
+--duo).
 
-select matchesCSV.date_time from matchesCSV
-select matches.date_time from matches
+select t1.pid as player1, t2.assist as player2,
+count(case when t1.pid is not null then 1 else null end) as ply1Count,
+count(case when t2.assist is not null then 1 else null end) as ply2Count
+from goals t1
+join goals t2 on t1.pid=t2.pid and t1.match_id = t2.match_id
+where 
+t1.pid is not null and t2.assist is not null
+group by t1.pid, t2.assist
+having count(t1.pid)>1 and count(t2.assist)>1
+order by count(t1.pid) desc
 
-alter table matches 
-alter column date_time datetime2
+select* from goals
+-----------------------~`~`~`~`~`~`~`~`-----------------------
+select pid as player1, assist as player2,
+count(pid) as ply1Count,
+count(assist) as ply2Count
+from goals
+where pid is not null and assist is not null
+group by pid, assist
+having count(pid)>1 and count(assist)>1
+
+select* from goals where pid='ply740' and assist='ply1073'
+select* from goals where pid='ply1073' and assist='ply740'
+
+--14. The team having players with more header goal percentage than any other
+--team in 2020.
+
+select top 1 teams.team_id, team_name, country,
+count(case when goal_desc like '%head%' then 1 else null end) as playerswithHeadshot,
+cast(count(case when goals.goal_desc like '%head%' then 1 else null end)as float) / count(*) * 100  as goalPerc
+from teams
+inner join players on players.team_id=teams.team_id 
+inner join goals on goals.pid=players.player_id
+inner join matches on matches.match_id = goals.match_id
+where season = '2020-2021'--matches.date_time like '%2020%'
+group by teams.team_id, team_name, country
+order by goalPerc desc
+
+
+--15. The most successful manager of UCL (2016-2022).
+select top 1 id, first_name, last_name, nationality, dob, managers.team_id, 
+count(match_id) as wins
+from managers
+inner join teams on teams.team_id = managers.team_id
+join matches on matches.home_team_id=teams.team_id or matches.away_team_id = teams.team_id
+where season between '2016' and '2022' and 
+((home_team_score >away_team_score and teams.team_id=home_team_id) or (away_team_score >home_team_score and teams.team_id = matches.away_team_id))
+group by id, first_name, last_name, nationality, dob, managers.team_id
+order by wins desc
+
+--16. The winner teams for each season of UCL (2016-2022).
+
+SELECT  *
+FROM    (select  teams.team_id, team_name, season,
+          count(match_id) as wins,
+                ROW_NUMBER() OVER (PARTITION BY season ORDER BY count(match_id) desc) AS PositionInUCL
+         FROM   teams
+         join matches on matches.home_team_id=teams.team_id or matches.away_team_id = teams.team_id
+         where season between '2016' and '2022' and 
+        ((home_team_score >away_team_score and teams.team_id=home_team_id) or (away_team_score >home_team_score and teams.team_id = matches.away_team_id))
+         group by teams.team_id, team_name, season
+         --order by wins desc
+         ) AS a
+WHERE   a.PositioninUCL = 1
