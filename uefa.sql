@@ -1,6 +1,8 @@
 create database assignment3
 use assignment3
 
+---excel files containing data for each table were imported---
+
 CREATE TABLE cities (
     cityname VARCHAR(50) primary key not null,
     countryname VARCHAR(50),
