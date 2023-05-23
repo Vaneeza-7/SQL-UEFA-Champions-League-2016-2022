@@ -1,4 +1,6 @@
 # SQL-UEFA-Champions-League-2016-2022
+![Language](https://img.shields.io/badge/Language-SQL-blue)
+
 This repository contains the code for SQL database of UEFA champions league (2016-2022), involving the creation of a database schema and various SQL queries. The database schema is designed to store information related to football matches, teams, players, stadiums, goals, and managers.
 
 ## Schema
