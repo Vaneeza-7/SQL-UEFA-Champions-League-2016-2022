@@ -1,0 +1,175 @@
+<<<<<<< HEAD
+ID,NAME,CITY,CAPACITY
+1,Giuseppe Meazza,Milano,75923
+2,Johan Cruijff ArenA,Amsterdam,54990
+3,Gewiss Stadium,Bergamo,26562
+4,Wanda Metropolitano,Madrid,68000
+5,Allianz Arena,Munchen,75024
+6,Vodafone Park,Istanbul,41903
+7,Signal Iduna Park,Dortmund,81365
+8,Stadion Wankdorf,Bern,32000
+9,Stamford Bridge,London,41837
+10,Jan Breydel Stadion,Brugge,29042
+11,Olimpiyskyi,Kiev,70050
+12,Spotify Camp Nou,Barcelona,99354
+13,Estadio do Dragao,Porto,54378
+14,Sheriff Stadium,Tiraspol,14300
+15,Allianz Stadium,Torino,41254
+16,Stade Pierre Mauroy,Villeneuve D?Ascq,50186
+17,Anfield,Liverpool,54074
+18,Nya Malmo Stadion,Malmo,22500
+19,Etihad Stadium,Manchester,55097
+20,Old Trafford,Manchester,74140
+21,Parc des Princes,Paris,48712
+22,Red Bull Arena,Leipzig,42558
+23,Santiago Bernabeu,Madrid,81044
+24,Ramon Sanchez Pizjuan,Sevilla,43883
+25,Donbass Arena,Donetsk,52518
+26,Estadio da Luz,Lisboa,65272
+27,Estadio Jose Alvalade,Lisboa,52000
+28,Volkswagen Arena,Wolfsburg,30000
+29,Estadio de la Ceramica,Villarreal,23500
+30,Gazprom Arena,St. Petersburg,68134
+31,Stade de France,Paris - St. Denis,81338
+32,Borussia-Park,Monchengladbach,54022
+33,MCH Arena,Herning,11535
+34,Groupama Arena,Budapest,23700
+35,Krasnodar Stadium,Krasnodar,34652
+36,Fatih Terim Stadium,Istanbul,17319
+37,Olimpico,Roma,70634
+38,RZD-Arena,Moskva,27320
+39,Georgios Karaiskakis,Piraus,33334
+40,Velodrome,Marseille,67394
+41,Roazhon Park,Rennes,29778
+42,Alfredo Di Stefano,Madrid,9000
+43,Puskas Arena,Budapest,67215
+44,Arena Nationala,Bucuresti,55611
+45,BayArena,Leverkusen,30210
+46,Marakana,Beograd,55538
+47,Maksimir,Zagreb,38079
+48,Nef Stadyumu,Istanbul,52280
+49,Cegeka Arena,Genk,24956
+50,Groupama Stadium,Decines-Charpieu,59186
+51,Sinobo Stadium,Praha,19370
+52,Diego Maradona,Napoli,60240
+53,Tottenham Hotspur Stadium,London,62062
+54,Estadio de Mestalla,Valencia,55000
+55,Metalist Stadion,Kharkiv,41307
+56,PreZero Arena,Sinsheim,30150
+57,Agia Sophia Stadium,Athen,30597
+58,Stade Louis II,Monaco,18524
+59,VEB Arena,Moskva,30000
+60,Veltins-Arena,Gelsenkirchen,62271
+61,Philips Stadion,Eindhoven,35000
+62,Doosan Arena,Plzen,12500
+63,Wembley Stadium,London,90000
+64,Spyros Louis (OAKA),Athen,71030
+65,Luzhniki,Moskva,80840
+66,Neo GSP Stadium,Nikosia,23650
+67,Celtic Park,Glasgow,60832
+68,St. Jakob-Park,Basel,38512
+69,De Kuip,Rotterdam,51177
+70,Ljudski vrt,Maribor,12994
+71,Qarabag Stadium,Baku,4735
+72,Lotto Park,Bruxelles,22500
+73,Otkrytie Arena,Moskva,44929
+74,Baku National Stadium,Baku,68700
+75,Emirates Stadium,London,60704
+76,Telia Parken,København,38076
+77,Rostov Arena,Rostov-na-Donu,45000
+78,Stadion Wojska Polskiego,Warszawa,31103
+79,King Power Stadium,Leicester,32500
+80,Huvepharma Arena,Razgrad,9000
+81,Vasil Levski,Sofia,43632
+82,Vicente Calderon,Madrid,54851
+83,Olimp2,Rostov-na-Donu,15840
+84,Arena Khimki,Khimki,18636
+85,Millennium,Cardiff,74500
+=======
+ID,NAME,CITY,CAPACITY
+1,Giuseppe Meazza,Milano,75923
+2,Johan Cruijff ArenA,Amsterdam,54990
+3,Gewiss Stadium,Bergamo,26562
+4,Wanda Metropolitano,Madrid,68000
+5,Allianz Arena,Munchen,75024
+6,Vodafone Park,Istanbul,41903
+7,Signal Iduna Park,Dortmund,81365
+8,Stadion Wankdorf,Bern,32000
+9,Stamford Bridge,London,41837
+10,Jan Breydel Stadion,Brugge,29042
+11,Olimpiyskyi,Kiev,70050
+12,Spotify Camp Nou,Barcelona,99354
+13,Estadio do Dragao,Porto,54378
+14,Sheriff Stadium,Tiraspol,14300
+15,Allianz Stadium,Torino,41254
+16,Stade Pierre Mauroy,Villeneuve D?Ascq,50186
+17,Anfield,Liverpool,54074
+18,Nya Malmo Stadion,Malmo,22500
+19,Etihad Stadium,Manchester,55097
+20,Old Trafford,Manchester,74140
+21,Parc des Princes,Paris,48712
+22,Red Bull Arena,Leipzig,42558
+23,Santiago Bernabeu,Madrid,81044
+24,Ramon Sanchez Pizjuan,Sevilla,43883
+25,Donbass Arena,Donetsk,52518
+26,Estadio da Luz,Lisboa,65272
+27,Estadio Jose Alvalade,Lisboa,52000
+28,Volkswagen Arena,Wolfsburg,30000
+29,Estadio de la Ceramica,Villarreal,23500
+30,Gazprom Arena,St. Petersburg,68134
+31,Stade de France,Paris - St. Denis,81338
+32,Borussia-Park,Monchengladbach,54022
+33,MCH Arena,Herning,11535
+34,Groupama Arena,Budapest,23700
+35,Krasnodar Stadium,Krasnodar,34652
+36,Fatih Terim Stadium,Istanbul,17319
+37,Olimpico,Roma,70634
+38,RZD-Arena,Moskva,27320
+39,Georgios Karaiskakis,Piraus,33334
+40,Velodrome,Marseille,67394
+41,Roazhon Park,Rennes,29778
+42,Alfredo Di Stefano,Madrid,9000
+43,Puskas Arena,Budapest,67215
+44,Arena Nationala,Bucuresti,55611
+45,BayArena,Leverkusen,30210
+46,Marakana,Beograd,55538
+47,Maksimir,Zagreb,38079
+48,Nef Stadyumu,Istanbul,52280
+49,Cegeka Arena,Genk,24956
+50,Groupama Stadium,Decines-Charpieu,59186
+51,Sinobo Stadium,Praha,19370
+52,Diego Maradona,Napoli,60240
+53,Tottenham Hotspur Stadium,London,62062
+54,Estadio de Mestalla,Valencia,55000
+55,Metalist Stadion,Kharkiv,41307
+56,PreZero Arena,Sinsheim,30150
+57,Agia Sophia Stadium,Athen,30597
+58,Stade Louis II,Monaco,18524
+59,VEB Arena,Moskva,30000
+60,Veltins-Arena,Gelsenkirchen,62271
+61,Philips Stadion,Eindhoven,35000
+62,Doosan Arena,Plzen,12500
+63,Wembley Stadium,London,90000
+64,Spyros Louis (OAKA),Athen,71030
+65,Luzhniki,Moskva,80840
+66,Neo GSP Stadium,Nikosia,23650
+67,Celtic Park,Glasgow,60832
+68,St. Jakob-Park,Basel,38512
+69,De Kuip,Rotterdam,51177
+70,Ljudski vrt,Maribor,12994
+71,Qarabag Stadium,Baku,4735
+72,Lotto Park,Bruxelles,22500
+73,Otkrytie Arena,Moskva,44929
+74,Baku National Stadium,Baku,68700
+75,Emirates Stadium,London,60704
+76,Telia Parken,København,38076
+77,Rostov Arena,Rostov-na-Donu,45000
+78,Stadion Wojska Polskiego,Warszawa,31103
+79,King Power Stadium,Leicester,32500
+80,Huvepharma Arena,Razgrad,9000
+81,Vasil Levski,Sofia,43632
+82,Vicente Calderon,Madrid,54851
+83,Olimp2,Rostov-na-Donu,15840
+84,Arena Khimki,Khimki,18636
+85,Millennium,Cardiff,74500
+>>>>>>> master

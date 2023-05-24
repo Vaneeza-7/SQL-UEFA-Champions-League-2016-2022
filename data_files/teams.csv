@@ -1,0 +1,153 @@
+<<<<<<< HEAD
+ID,TEAM_NAME,COUNTRY,HOME_STADIUM_ID
+1,AC Milan,Italy,1
+2,AFC Ajax,Netherlands,2
+3,Atalanta,Italy,3
+4,Atletico Madrid,Spain,4
+5,Bayern Munchen,Germany,5
+6,Besiktas,Turkey,6
+7,Borussia Dortmund,Germany,7
+8,BSC Young Boys,Switzerland,8
+9,Chelsea FC,England,9
+10,Club Brugge KV,Belgium,10
+11,Dinamo Kiev,Ukraine,11
+12,FC Barcelona,Spain,12
+13,FC Porto,Portugal,13
+14,FC Sheriff,Moldova,14
+15,Inter,Italy,1
+16,Juventus,Italy,15
+17,Lille OSC,France,16
+18,Liverpool FC,England,17
+19,Malmo FF,Sweden,18
+20,Manchester City,England,19
+21,Manchester United,England,20
+22,Paris Saint-Germain,France,21
+23,RB Leipzig,Germany,22
+24,RB Salzburg,Austria,22
+25,Real Madrid,Spain,23
+26,Sevilla FC,Spain,24
+27,Shakhtar Donetsk,Ukraine,25
+28,SL Benfica,Portugal,26
+29,Sporting CP,Portugal,27
+30,VfL Wolfsburg,Germany,28
+31,Villarreal CF,Spain,29
+32,Zenit St. Petersburg,Russia,30
+33,Bor. Monchengladbach,Germany,32
+34,FC Midtjylland,Denmark,33
+35,Ferencvarosi TC,Hungary,34
+36,FK Krasnodar,Russia,35
+37,Istanbul Basaksehir,Turkey,36
+38,Lazio Roma,Italy,37
+39,Lokomotiv Moskva,Russia,38
+40,Olympiakos Piraeus,Greece,39
+41,Olympique Marseille,France,40
+42,Stade Rennes,France,41
+43,Bayer Leverkusen,Germany,45
+44,Crvena Zvezda,Serbia,46
+45,Dinamo Zagreb,Croatia,47
+46,Galatasaray,Turkey,48
+47,KRC Genk,Belgium,49
+48,Olympique Lyon,France,50
+49,Slavia Praha,Czech Republic,51
+50,SSC Napoli,Italy,52
+51,Tottenham Hotspur,England,53
+52,Valencia CF,Spain,54
+53,1899 Hoffenheim,Germany,56
+54,AEK Athen,Greece,57
+55,AS Monaco,France,58
+56,AS Roma,Italy,37
+57,CSKA Moskva,Russia,59
+58,FC Schalke 04,Germany,60
+59,PSV Eindhoven,Netherlands,61
+60,Viktoria Plzen,Czech Republic,62
+61,APOEL Nikosia,Cyprus,66
+62,Celtic FC,Scotland,67
+63,FC Basel,Switzerland,68
+64,Feyenoord,Netherlands,69
+65,NK Maribor,Slovenia,70
+66,Qarabag FK,Azerbaijan,71
+67,RSC Anderlecht,Belgium,72
+68,Spartak Moskva,Russia,73
+69,Arsenal FC,England,75
+70,FC K?enhavn,Denmark,76
+71,FK Rostov,Russia,77
+72,Legia Warszawa,Poland,78
+73,Leicester City,England,79
+74,PFC Ludogorets Razgrad,Bulgaria,80
+=======
+ID,TEAM_NAME,COUNTRY,HOME_STADIUM_ID
+1,AC Milan,Italy,1
+2,AFC Ajax,Netherlands,2
+3,Atalanta,Italy,3
+4,Atletico Madrid,Spain,4
+5,Bayern Munchen,Germany,5
+6,Besiktas,Turkey,6
+7,Borussia Dortmund,Germany,7
+8,BSC Young Boys,Switzerland,8
+9,Chelsea FC,England,9
+10,Club Brugge KV,Belgium,10
+11,Dinamo Kiev,Ukraine,11
+12,FC Barcelona,Spain,12
+13,FC Porto,Portugal,13
+14,FC Sheriff,Moldova,14
+15,Inter,Italy,1
+16,Juventus,Italy,15
+17,Lille OSC,France,16
+18,Liverpool FC,England,17
+19,Malmo FF,Sweden,18
+20,Manchester City,England,19
+21,Manchester United,England,20
+22,Paris Saint-Germain,France,21
+23,RB Leipzig,Germany,22
+24,RB Salzburg,Austria,22
+25,Real Madrid,Spain,23
+26,Sevilla FC,Spain,24
+27,Shakhtar Donetsk,Ukraine,25
+28,SL Benfica,Portugal,26
+29,Sporting CP,Portugal,27
+30,VfL Wolfsburg,Germany,28
+31,Villarreal CF,Spain,29
+32,Zenit St. Petersburg,Russia,30
+33,Bor. Monchengladbach,Germany,32
+34,FC Midtjylland,Denmark,33
+35,Ferencvarosi TC,Hungary,34
+36,FK Krasnodar,Russia,35
+37,Istanbul Basaksehir,Turkey,36
+38,Lazio Roma,Italy,37
+39,Lokomotiv Moskva,Russia,38
+40,Olympiakos Piraeus,Greece,39
+41,Olympique Marseille,France,40
+42,Stade Rennes,France,41
+43,Bayer Leverkusen,Germany,45
+44,Crvena Zvezda,Serbia,46
+45,Dinamo Zagreb,Croatia,47
+46,Galatasaray,Turkey,48
+47,KRC Genk,Belgium,49
+48,Olympique Lyon,France,50
+49,Slavia Praha,Czech Republic,51
+50,SSC Napoli,Italy,52
+51,Tottenham Hotspur,England,53
+52,Valencia CF,Spain,54
+53,1899 Hoffenheim,Germany,56
+54,AEK Athen,Greece,57
+55,AS Monaco,France,58
+56,AS Roma,Italy,37
+57,CSKA Moskva,Russia,59
+58,FC Schalke 04,Germany,60
+59,PSV Eindhoven,Netherlands,61
+60,Viktoria Plzen,Czech Republic,62
+61,APOEL Nikosia,Cyprus,66
+62,Celtic FC,Scotland,67
+63,FC Basel,Switzerland,68
+64,Feyenoord,Netherlands,69
+65,NK Maribor,Slovenia,70
+66,Qarabag FK,Azerbaijan,71
+67,RSC Anderlecht,Belgium,72
+68,Spartak Moskva,Russia,73
+69,Arsenal FC,England,75
+70,FC K?enhavn,Denmark,76
+71,FK Rostov,Russia,77
+72,Legia Warszawa,Poland,78
+73,Leicester City,England,79
+74,PFC Ludogorets Razgrad,Bulgaria,80
+>>>>>>> master
